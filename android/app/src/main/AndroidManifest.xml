@@ -1,8 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.plantapp">
+    package="com.kayode.plantapp">
    <application
         android:label="plantapp"
         android:icon="@mipmap/ic_launcher">
+
+        <meta-data android:value="@string/facebook_app_id"
+                    android:name="com.facebook.sdk.ApplicationId"/>
+
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

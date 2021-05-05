@@ -1,6 +1,5 @@
 import 'package:fancy_on_boarding/fancy_on_boarding.dart';
 import 'package:flutter/material.dart';
-import 'package:plantapp/screens/home/home_screen.dart';
 
 // class OnboardingScreen extends StatelessWidget {
 //   @override

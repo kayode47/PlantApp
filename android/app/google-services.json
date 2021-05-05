@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1057942010550",
+    "project_id": "plantapp-f1ff1",
+    "storage_bucket": "plantapp-f1ff1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1057942010550:android:2bdbda8d3d4194c28d8417",
+        "android_client_info": {
+          "package_name": "com.kayode.plantapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1057942010550-n5o51q65d6sb0aec9tuqaecsjs8irq9j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kayode.plantapp",
+            "certificate_hash": "a7b42f06e387e5306f936b53d6dd379295a6a46d"
+          }
+        },
+        {
+          "client_id": "1057942010550-bngv7ist1fut1fpl58odp290u3fa0qpq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkehCG0nOiXXAs6arirbmJek_3rDbK7Bo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1057942010550-bngv7ist1fut1fpl58odp290u3fa0qpq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
