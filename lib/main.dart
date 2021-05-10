@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plantapp/login.dart';
 import 'package:plantapp/screens/home/home_screen.dart';
-import 'package:plantapp/screens/onboard/onboard_screen.dart';
+// import 'package:plantapp/screens/onboard/onboard_screen.dart';
 
 import 'constants.dart';
 import 'screens/onboard/onboard_page.dart';

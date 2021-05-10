@@ -29,8 +29,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       'Browse the menu and order directly from the application',
                   isShowImageOnTop: false,
                   color: Color(0xFF96f542),
-
-
                 ),
                 _buildPageContent(
                   image: 'assets/images/onboarding2.png',
@@ -38,8 +36,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   isShowImageOnTop: true,
                   // color: Color(0xFF42f56f),
                   color: Color(0xFF4a8c1b),
-
-
                 ),
                 _buildPageContent(
                   image: 'assets/images/stores.png',

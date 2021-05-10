@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plantapp/screens/home/components/plants.dart';
 import 'package:plantapp/screens/home/components/recomend_plants.dart';
 
 import '../../../constants.dart';
@@ -24,7 +25,9 @@ class Body extends StatelessWidget {
           CarouselPage(),
           TitleWithMoreBtn(title: "Recomended", press: () {}),
           RecomendsPlants(),
-          TitleWithMoreBtn(title: "Featured Plants", press: () {}),
+          PlantsType(),
+          SizedBox(height: kDefaultPadding),
+          TitleWithMoreBtn(title: "Featured", press: () {}),
           FeaturedPlants(),
           SizedBox(height: kDefaultPadding),
         ],
