@@ -27,13 +27,23 @@ class PlantsType extends StatelessWidget {
               FeaturePlantCard(
                 image: "assets/images/bottom_img_1.png",
                 name: "Non Flowering Plants",
-                press: () {},
+                press: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                             builder: (context) => SectionScreen(
+                             ),
+                          )), 
               ),
               FeaturePlantCard(
                 image: "assets/images/bottom_img_2.png",
                 name: "Flowering Plants",
-                press: () {},
-              ),
+                press: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                             builder: (context) => SectionScreen(
+                             ),
+                          )),             
+                           ),
               FeaturePlantCard(
                 image: "assets/images/bottom_img_2.png",
                 name: "Tree Plants",

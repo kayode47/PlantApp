@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:plantapp/screens/notification/notifcation_page.dart';
+import 'package:plantapp/screens/orders/order_page.dart';
+import 'package:plantapp/screens/coupon/coupon_page.dart';
 
 class Profile extends StatelessWidget {
   @override
@@ -14,7 +17,7 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-          body: Column(
+      body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Padding(
@@ -51,188 +54,84 @@ class ProfilePage extends StatelessWidget {
                 ],
               ),
             ),
-
-
             Card(
               child: ListTile(
-                leading: Icon(Icons.shopping_bag_outlined,color: Colors.black),
+                leading: Icon(Icons.shopping_bag_outlined, color: Colors.black),
                 title: Text('Orders'),
                 trailing: Icon(
-                            Icons.arrow_forward,
-                            color: Colors.black,
-                          ),
+                  Icons.arrow_forward,
+                  color: Colors.black,
+                ),
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => OrderScreen(),
+                    )),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                leading: Icon(Icons.shopping_bag_outlined, color: Colors.black),
+                title: Text('My Details'),
+                trailing: Icon(
+                  Icons.arrow_forward,
+                  color: Colors.black,
+                ),
                 onTap: () => print('Tapped on Row Orders'),
               ),
             ),
             Card(
               child: ListTile(
-                leading: Icon(Icons.shopping_bag_outlined,color: Colors.black),
-                title: Text('Orders'),
+                leading: Icon(Icons.shopping_bag_outlined, color: Colors.black),
+                title: Text('Redeem Coupons'),
                 trailing: Icon(
-                            Icons.arrow_forward,
-                            color: Colors.black,
-                          ),
+                  Icons.arrow_forward,
+                  color: Colors.black,
+                ),
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Coupon(),
+                    )),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                leading: Icon(Icons.shopping_bag_outlined, color: Colors.black),
+                title: Text('Notification'),
+                trailing: Icon(
+                  Icons.arrow_forward,
+                  color: Colors.black,
+                ),
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => NotificationPage(),
+                    ))
+              ),
+            ),
+            Card(
+              child: ListTile(
+                leading: Icon(Icons.shopping_bag_outlined, color: Colors.black),
+                title: Text('Help'),
+                trailing: Icon(
+                  Icons.arrow_forward,
+                  color: Colors.black,
+                ),
                 onTap: () => print('Tapped on Row Orders'),
               ),
             ),
             Card(
               child: ListTile(
-                leading: Icon(Icons.shopping_bag_outlined,color: Colors.black),
-                title: Text('Orders'),
+                leading: Icon(Icons.shopping_bag_outlined, color: Colors.black),
+                title: Text('About'),
                 trailing: Icon(
-                            Icons.arrow_forward,
-                            color: Colors.black,
-                          ),
+                  Icons.arrow_forward,
+                  color: Colors.black,
+                ),
                 onTap: () => print('Tapped on Row Orders'),
               ),
             ),
-
-            Card(
-              child: ListTile(
-                leading: Icon(Icons.shopping_bag_outlined,color: Colors.black),
-                title: Text('Orders'),
-                trailing: Icon(
-                            Icons.arrow_forward,
-                            color: Colors.black,
-                          ),
-                onTap: () => print('Tapped on Row Orders'),
-              ),
-            ),
-            Card(
-              child: ListTile(
-                leading: Icon(Icons.shopping_bag_outlined,color: Colors.black),
-                title: Text('Orders'),
-                trailing: Icon(
-                            Icons.arrow_forward,
-                            color: Colors.black,
-                          ),
-                onTap: () => print('Tapped on Row Orders'),
-              ),
-            ),
-            Card(
-              child: ListTile(
-                leading: Icon(Icons.shopping_bag_outlined,color: Colors.black),
-                title: Text('Orders'),
-                trailing: Icon(
-                            Icons.arrow_forward,
-                            color: Colors.black,
-                          ),
-                onTap: () => print('Tapped on Row Orders'),
-              ),
-            ),
-
-
-
-            // Column(
-            //   children: [
-            //     Card(
-            //       child: Row(
-            //         children: [
-            //           Expanded(
-            //             child: Row(children: [
-            //               Icon(
-            //                 Icons.shopping_bag_outlined,color: Colors.black,
-            //                 color: Colors.black,
-            //               ),
-            //               Text(
-            //                 "mickjackson@mail.com",
-            //                 style: TextStyle(
-            //                   fontSize: 24.0,
-            //                   color: Colors.black38,
-            //                   fontWeight: FontWeight.normal,
-            //                 ),
-            //               ),
-            //               Icon(
-            //                 Icons.arrow_forward,
-            //                 color: Colors.black,
-            //               ),
-            //             ]),
-            //           ),
-            //           Expanded(
-            //             child: Row(children: [
-            //               Icon(
-            //                 Icons.shopping_bag_outlined,color: Colors.black,
-            //                 color: Colors.black,
-            //               ),
-            //               Text(
-            //                 "mickjackson@mail.com",
-            //                 style: TextStyle(
-            //                   fontSize: 24.0,
-            //                   color: Colors.black38,
-            //                   fontWeight: FontWeight.normal,
-            //                 ),
-            //               ),
-            //               Icon(
-            //                 Icons.arrow_forward,
-            //                 color: Colors.black,
-            //               ),
-            //             ]),
-            //           ),
-            //           Expanded(
-            //             child: Row(children: [
-            //               Icon(
-            //                 Icons.shopping_bag_outlined,color: Colors.black,
-            //                 color: Colors.black,
-            //               ),
-            //               Text(
-            //                 "mickjackson@mail.com",
-            //                 style: TextStyle(
-            //                   fontSize: 24.0,
-            //                   color: Colors.black38,
-            //                   fontWeight: FontWeight.normal,
-            //                 ),
-            //               ),
-            //               Icon(
-            //                 Icons.arrow_forward,
-            //                 color: Colors.black,
-            //               ),
-            //             ]),
-            //           ),
-            //           Expanded(
-            //             child: Row(children: [
-            //               Icon(
-            //                 Icons.shopping_bag_outlined,color: Colors.black,
-            //                 color: Colors.black,
-            //               ),
-            //               Text(
-            //                 "mickjackson@mail.com",
-            //                 style: TextStyle(
-            //                   fontSize: 24.0,
-            //                   color: Colors.black38,
-            //                   fontWeight: FontWeight.normal,
-            //                 ),
-            //               ),
-            //               Icon(
-            //                 Icons.arrow_forward,
-            //                 color: Colors.black,
-            //               ),
-            //             ]),
-            //           ),
-            //           Expanded(
-            //             child: Row(children: [
-            //               Icon(
-            //                 Icons.shopping_bag_outlined,color: Colors.black,
-            //                 color: Colors.black,
-            //               ),
-            //               Text(
-            //                 "mickjackson@mail.com",
-            //                 style: TextStyle(
-            //                   fontSize: 24.0,
-            //                   color: Colors.black38,
-            //                   fontWeight: FontWeight.normal,
-            //                 ),
-            //               ),
-            //               Icon(
-            //                 Icons.arrow_forward,
-            //                 color: Colors.black,
-            //               ),
-            //             ]),
-            //           ),
-            //         ],
-            //       ),
-            //     )
-            //   ],
-            // )
           ]),
     );
   }
