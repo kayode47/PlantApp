@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:plantapp/screens/notification/notifcation_page.dart';
 import 'package:plantapp/screens/orders/order_page.dart';
 import 'package:plantapp/screens/coupon/coupon_page.dart';
+import 'package:plantapp/screens/support/support_page.dart';
 
 class Profile extends StatelessWidget {
   @override
@@ -113,12 +114,16 @@ class ProfilePage extends StatelessWidget {
             Card(
               child: ListTile(
                 leading: Icon(Icons.shopping_bag_outlined, color: Colors.black),
-                title: Text('Help'),
+                title: Text('Help & Support'),
                 trailing: Icon(
                   Icons.arrow_forward,
                   color: Colors.black,
                 ),
-                onTap: () => print('Tapped on Row Orders'),
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SupportPage(),
+                    )),
               ),
             ),
             Card(
