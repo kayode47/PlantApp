@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -47,81 +49,93 @@ class SupportPage extends StatelessWidget {
 class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
+    return  SingleChildScrollView(
+          child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(10.0),
             child: Column(
               children: [
-                GridView(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    mainAxisSpacing: kDefaultPadding,
-                    crossAxisSpacing: kDefaultPadding,
-                    childAspectRatio: 0.75,
-                  ),
-                  children: [
-                    Card(
-                      elevation: 3.0,
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: CircleAvatar(
-                              child: SvgPicture.asset(
-                                  'assets/icons/customer-service-1.svg'),
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.3,
+                  child: GridView(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: kDefaultPadding/2,
+                      crossAxisSpacing: kDefaultPadding/2,
+                      childAspectRatio: 1.0,
+                    ),
+                    children: [
+                      Card(
+                        elevation: 3.0,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Center(
+                            child: Column(
+                              children: [
+                                CircleAvatar(
+                                  child: SvgPicture.asset(
+                                      'assets/icons/customer-service-1.svg'),
+                                ),
+                                Text(
+                                  "Customer Care",
+                                  style:
+                                      Theme.of(context).textTheme.subtitle1.copyWith(
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                ),
+                                Text(
+                                  "Connect with a customer Representative",
+                                  style:
+                                      Theme.of(context).textTheme.subtitle2.copyWith(
+                                            fontWeight: FontWeight.w300,
+                                          ),
+                                ),
+                              ],
                             ),
                           ),
-                          Text(
-                            "Customer Care",
-                            style: Theme.of(context).textTheme.subtitle1.copyWith(
-                                  fontWeight: FontWeight.bold,
+                        ),
+                      ),                  
+                      Card(
+                        elevation: 3.0,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Center(
+                            child: Column(
+                              children: [
+                                CircleAvatar(
+                                  child: SvgPicture.asset(
+                                      'assets/icons/customer-service-1.svg'),
                                 ),
-                          ),
-                          Text(
-                            "Connect with a customer Representative",
-                            style: Theme.of(context).textTheme.subtitle2.copyWith(
-                                  fontWeight: FontWeight.normal,
+                                Text(
+                                  "Customer Care",
+                                  style:
+                                      Theme.of(context).textTheme.subtitle1.copyWith(
+                                            fontWeight: FontWeight.bold,
+                                          ),
                                 ),
+                                Text(
+                                  "Connect with a customer Representative",
+                                  style:
+                                      Theme.of(context).textTheme.subtitle2.copyWith(
+                                            fontWeight: FontWeight.w300,
+                                          ),
+                                ),
+                              ],
+                            ),
                           ),
-                        ],
+                        ),
                       ),
-                    ),
-                    Card(
-                      elevation: 3.0,
-                      child: Column(
-                        children: [
-                          CircleAvatar(
-                            child: SvgPicture.asset(
-                                'assets/icons/customer-service.svg'),
-                          ),
-                          Text(
-                            "Customer Care",
-                            style: Theme.of(context).textTheme.subtitle1.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                ),
-                          ),
-                          Text(
-                            "Connect with a customer Representative",
-                            style: Theme.of(context).textTheme.subtitle2.copyWith(
-                                  fontWeight: FontWeight.normal,
-                                ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-                            FAQ(),
+                FAQ(),
               ],
             ),
           ),
-        
-        ),
-        
-      ],
+        ],
+      ),
     );
   }
 }
@@ -136,17 +150,13 @@ class FaqData {
 class FAQ extends StatefulWidget {
   @override
   _FAQState createState() => _FAQState([
-        FaqData("how to Pay", "Card \n  Walllet \n  Coupon.", false),
+        FaqData("How to Pay", "Cards\nWalllet\nCoupon.", false),
         FaqData("Delivery Time", "3 - 7 days", false),
         FaqData(
             "Lorem ipsum",
             "Lourem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia ,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo atem.",
             false),
-        FaqData(
-            "Lorem ipsum",
-            "Lourem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia ,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo atem.",
-            false),
-        FaqData(
+       FaqData(
             "Lorem ipsum",
             "Lourem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia ,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo atem.",
             false),
@@ -177,9 +187,11 @@ class _FAQState extends State<FAQ> {
           },
           body: Padding(
               padding: EdgeInsets.all(20.0),
-              child: Text(expansionData.details,
-                  style:
-                      TextStyle(fontSize: 20.0, fontStyle: FontStyle.italic))),
+              child: Center(
+                child: Text(expansionData.details,
+                    style:
+                        TextStyle(fontSize: 20.0, fontStyle: FontStyle.italic)),
+              )),
           isExpanded: expansionData._expanded));
     }
     return Container(
