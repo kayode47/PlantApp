@@ -25,8 +25,8 @@ class PlantsType extends StatelessWidget {
           child: Row(
             children: <Widget>[
               FeaturePlantCard(
-                image: "assets/images/bottom_img_1.png",
-                name: "Non Flowering Plants",
+                image: "assets/images/non_flowering_plant.jpg",
+                name: "Non Flowering",
                 press: () => Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -35,8 +35,8 @@ class PlantsType extends StatelessWidget {
                           )), 
               ),
               FeaturePlantCard(
-                image: "assets/images/bottom_img_2.png",
-                name: "Flowering Plants",
+                image: "assets/images/flower_plant.jpg",
+                name: "Flowering",
                 press: () => Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -45,8 +45,8 @@ class PlantsType extends StatelessWidget {
                           )),             
                            ),
               FeaturePlantCard(
-                image: "assets/images/bottom_img_2.png",
-                name: "Tree Plants",
+                image: "assets/images/tree_plant.jpg",
+                name: "Tree",
                 press: () => Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -84,7 +84,7 @@ class FeaturePlantCard extends StatelessWidget {
           bottom: kDefaultPadding / 2,
         ),
         width: size.width * 0.4,
-        height: 95,
+        height: size.width * 0.3,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           image: DecorationImage(
@@ -93,12 +93,12 @@ class FeaturePlantCard extends StatelessWidget {
           ),
         ),
         child: Align(alignment: Alignment.center, child: Text(
-                'Trees',
+                name,
                 style:  TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 30.0,
                   fontFamily: 'Roboto',
-                  color:  Color(0xFF26C6DA),
+                  color:  Colors.black,
                 )
               ),
       ),

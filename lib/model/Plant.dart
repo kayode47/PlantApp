@@ -16,11 +16,10 @@ class Plant {
       this.description,
       this.care,
       this.xxx});
-
 }
 
-  List<Plant> plants = [
-    Plant(
+List<Plant> plants = [
+  Plant(
       id: 1,
       title: 'Red Catus',
       price: 86,
@@ -28,11 +27,10 @@ class Plant {
       group: 2,
       image1: "assets/images/plant1_1.png",
       image2: "assets/images/plant1_1.png",
-      care: ['mediun','30','twice a week', 'medium'],
+      care: ['mediun', '30', 'twice a week', 'medium'],
       description: dummyText,
-      xxx: "non"
-    ),
-    Plant(
+      xxx: "non"),
+  Plant(
       id: 2,
       title: 'Ball Catus',
       price: 241,
@@ -40,10 +38,10 @@ class Plant {
       group: 2,
       image1: "assets/images/plant2_1.png",
       image2: "assets/images/plant2_1.png",
+      care: ['mediun', '30', 'twice a week', 'medium'],
       description: dummyText,
-      xxx: "non"
-    ),
-    Plant(
+      xxx: "non"),
+  Plant(
       id: 3,
       title: 'Desert Catus',
       price: 35,
@@ -51,10 +49,10 @@ class Plant {
       group: 2,
       image1: "assets/images/plant3_1.png",
       image2: "assets/images/plant3_1.png",
+      care: ['mediun', '30', 'twice a week', 'medium'],
       description: dummyText,
-      xxx: "non"
-    ),
-    Plant(
+      xxx: "non"),
+  Plant(
       id: 4,
       title: 'Fern',
       price: 61,
@@ -62,10 +60,10 @@ class Plant {
       group: 4,
       image1: "assets/images/plant4_1.png",
       image2: "assets/images/plant4_1.png",
+      care: ['mediun', '30', 'twice a week', 'medium'],
       description: dummyText,
-      xxx: "non"
-    ),
-    Plant(
+      xxx: "non"),
+  Plant(
       id: 5,
       title: 'Pine Palm',
       price: 342,
@@ -73,10 +71,10 @@ class Plant {
       group: 6,
       image1: "assets/images/plant5_1.png",
       image2: "assets/images/plant5_1.png",
+      care: ['mediun', '30', 'twice a week', 'medium'],
       description: dummyText,
-      xxx: "non"
-    ),
-    Plant(
+      xxx: "non"),
+  Plant(
       id: 6,
       title: 'Thin Palm',
       price: 42,
@@ -84,13 +82,79 @@ class Plant {
       group: 6,
       image1: "assets/images/plant6_1.png",
       image2: "assets/images/plant6_1.png",
+      care: ['mediun', '30', 'twice a week', 'medium'],
       description: dummyText,
-      xxx: "non"
-    ),
-  ];
+      xxx: "non"),
+  Plant(
+      id: 7,
+      title: 'Palm Fort',
+      price: 26,
+      type: 1,
+      group: 2,
+      image1: "assets/images/plant7_1.png",
+      image2: "assets/images/plant7_1.png",
+      care: ['mediun', '30', 'twice a week', 'medium'],
+      description: dummyText,
+      xxx: "non"),
+  Plant(
+      id: 8,
+      title: 'Bisel Tree',
+      price: 41,
+      type: 1,
+      group: 2,
+      image1: "assets/images/plant8_1.png",
+      image2: "assets/images/plant8_1.png",
+      care: ['mediun', '30', 'twice a week', 'medium'],
+      description: dummyText,
+      xxx: "non"),
+  Plant(
+      id: 9,
+      title: 'Olive Tree',
+      price: 80,
+      type: 1,
+      group: 2,
+      image1: "assets/images/plant9_1.png",
+      image2: "assets/images/plant9_1.png",
+      care: ['mediun', '30', 'twice a week', 'medium'],
+      description: dummyText,
+      xxx: "non"),
+  Plant(
+      id: 10,
+      title: 'Lily',
+      price: 45,
+      type: 2,
+      group: 4,
+      image1: "assets/images/plant10_1.png",
+      image2: "assets/images/plant10_1.png",
+      care: ['mediun', '30', 'twice a week', 'medium'],
+      description: dummyText,
+      xxx: "non"),
+];
 
-    String dummyText="Very short - stemmed plant growing to  50-100 cm (25-40 in) tall, spreading  by offsets. Have thick and fleshy leaves  that hold water to sustain the palnt during a drought.";
+List<Plant> carts = [
+  Plant(
+      id: 10,
+      title: 'Lily',
+      price: 45,
+      type: 2,
+      group: 4,
+      image1: "assets/images/plant10_1.png",
+      image2: "assets/images/plant10_1.png",
+      care: ['mediun', '30', 'twice a week', 'medium'],
+      description: dummyText,
+      xxx: "non"),
+      Plant(
+      id: 8,
+      title: 'Bisel Tree',
+      price: 41,
+      type: 1,
+      group: 2,
+      image1: "assets/images/plant8_1.png",
+      image2: "assets/images/plant8_1.png",
+      care: ['mediun', '30', 'twice a week', 'medium'],
+      description: dummyText,
+      xxx: "non"),
+];
 
-
-
-
+String dummyText =
+    "Very short - stemmed plant growing to  50-100 cm (25-40 in) tall, spreading  by offsets. Have thick and fleshy leaves  that hold water to sustain the palnt during a drought.";

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:plantapp/screens/cart/cart.dart';
 import 'package:plantapp/screens/details/detail_screen.dart';
+import 'package:plantapp/screens/home/home_screen.dart';
 import 'package:plantapp/screens/profile/profile_page.dart';
 
 import '../constants.dart';
@@ -32,19 +34,35 @@ class MyBottomNavBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           IconButton(
-            icon: SvgPicture.asset("assets/icons/flower.svg"),
-            onPressed: () {},
+            icon: SvgPicture.asset("assets/icons/flower.svg", color: Colors.grey,),
+            onPressed: () {
+              
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HomeScreen(),
+                ),
+              );
+            },
+          ),
+          // IconButton(
+          //   icon: SvgPicture.asset("assets/icons/heart-icon.svg"),
+          //   onPressed: () {},
+          // ),
+          IconButton(
+            icon: SvgPicture.asset("assets/icons/cart.svg", color: Colors.grey,),
+            onPressed: () {
+              
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => CartScreen(),
+                ),
+              );
+            },
           ),
           IconButton(
-            icon: SvgPicture.asset("assets/icons/heart-icon.svg"),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: SvgPicture.asset("assets/icons/shopping-basket.svg"),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: SvgPicture.asset("assets/icons/user-icon.svg"),
+            icon: SvgPicture.asset("assets/icons/user-icon.svg", color: Colors.grey,),
             
             onPressed: () {
               Navigator.push(

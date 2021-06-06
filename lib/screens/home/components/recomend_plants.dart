@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:plantapp/model/Plant.dart';
 import 'package:plantapp/screens/details/detail_screen.dart';
 
 import '../../../constants.dart';
 
 class RecomendsPlants extends StatelessWidget {
-  const RecomendsPlants({
+  final recPlant = plants..shuffle();
+  RecomendsPlants({
     Key key,
   }) : super(key: key);
 
@@ -15,6 +17,7 @@ class RecomendsPlants extends StatelessWidget {
       child: Row(
         children: <Widget>[
           RecomendPlantCard(
+            plant: recPlant[0],
             image: "assets/images/image_1.png",
             title: "Samantha",
             country: "Russia",
@@ -23,12 +26,13 @@ class RecomendsPlants extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailsScreen(),
+                  builder: (context) => DetailsScreen(plant: recPlant[0]),
                 ),
               );
             },
           ),
           RecomendPlantCard(
+            plant: recPlant[1],
             image: "assets/images/image_2.png",
             title: "Angelica",
             country: "Russia",
@@ -37,17 +41,25 @@ class RecomendsPlants extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailsScreen(),
+                  builder: (context) => DetailsScreen(plant: recPlant[1]),
                 ),
               );
             },
           ),
           RecomendPlantCard(
+            plant: recPlant[2],
             image: "assets/images/image_3.png",
             title: "Samantha",
             country: "Russia",
             price: 440,
-            press: () {},
+            press: () {
+               Navigator.push(
+               context,
+                MaterialPageRoute(
+                  builder: (context) => DetailsScreen(plant: recPlant[2]),
+                ),
+              );
+            },
           ),
         ],
       ),
@@ -58,6 +70,7 @@ class RecomendsPlants extends StatelessWidget {
 class RecomendPlantCard extends StatelessWidget {
   const RecomendPlantCard({
     Key key,
+    this.plant,
     this.image,
     this.title,
     this.country,
@@ -68,6 +81,7 @@ class RecomendPlantCard extends StatelessWidget {
   final String image, title, country;
   final int price;
   final Function press;
+  final Plant plant;
 
   @override
   Widget build(BuildContext context) {
@@ -79,18 +93,24 @@ class RecomendPlantCard extends StatelessWidget {
         bottom: kDefaultPadding * 2.5,
       ),
       width: size.width * 0.4,
-      child: Column(
-        children: <Widget>[
-          Image.asset(image),
-          GestureDetector(
-            onTap: press,
-            child: Container(
+      child: GestureDetector(
+        onTap: press,
+              child: Column(
+          children: <Widget>[
+            ClipRRect(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20),
+                topRight: Radius.circular(20),
+              ),
+              child: Image.asset(plant.image1,fit:BoxFit.fill , width: size.width*0.4,height: size.width*0.5,)
+              ),
+            Container(
               padding: EdgeInsets.all(kDefaultPadding / 2),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(10),
-                  bottomRight: Radius.circular(10),
+                  bottomLeft: Radius.circular(20),
+                  bottomRight: Radius.circular(20),
                 ),
                 boxShadow: [
                   BoxShadow(
@@ -106,10 +126,10 @@ class RecomendPlantCard extends StatelessWidget {
                     text: TextSpan(
                       children: [
                         TextSpan(
-                            text: "$title\n".toUpperCase(),
+                            text: "${plant.title}\n".toUpperCase(),
                             style: Theme.of(context).textTheme.button),
                         TextSpan(
-                          text: "$country".toUpperCase(),
+                          text: "${plant.group}".toUpperCase(),
                           style: TextStyle(
                             color: kPrimaryColor.withOpacity(0.5),
                           ),
@@ -119,7 +139,7 @@ class RecomendPlantCard extends StatelessWidget {
                   ),
                   Spacer(),
                   Text(
-                    '\$$price',
+                    '\$${plant.price}',
                     style: Theme.of(context)
                         .textTheme
                         .button
@@ -127,9 +147,9 @@ class RecomendPlantCard extends StatelessWidget {
                   )
                 ],
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plantapp/screens/home/components/plants.dart';
 import 'package:plantapp/screens/home/components/recomend_plants.dart';
+import 'package:plantapp/screens/section/section_page.dart';
 
 import '../../../constants.dart';
 import 'carousel.dart';
@@ -23,11 +24,24 @@ class Body extends StatelessWidget {
           // height: kDefaultPadding*3,
           // ),
           CarouselPage(),
-          TitleWithMoreBtn(title: "Recomended", press: () {}),
+          Padding(
+            padding: const EdgeInsets.only(top:8.0),
+            child: TitleWithMoreBtn(title: "Recomended", press: () {Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SectionScreen(),
+                ),
+              );}),
+          ),
           RecomendsPlants(),
           PlantsType(),
           SizedBox(height: kDefaultPadding),
-          TitleWithMoreBtn(title: "Featured", press: () {}),
+          TitleWithMoreBtn(title: "Featured", press: () {Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SectionScreen(),
+                ),
+              );}),
           FeaturedPlants(),
           SizedBox(height: kDefaultPadding),
         ],

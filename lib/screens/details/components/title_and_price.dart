@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:plantapp/model/Plant.dart';
 
 import '../../../constants.dart';
 import 'icon_card_black.dart';
@@ -9,16 +11,20 @@ class TitleAndPrice extends StatelessWidget {
     this.title,
     this.country,
     this.price,
+    this.plant,
   }) : super(key: key);
 
   final String title, country;
   final int price;
+  final Plant plant;
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Padding(
-      padding: const EdgeInsets.all(8.0,),
+      padding: const EdgeInsets.all(
+        8.0,
+      ),
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
@@ -26,7 +32,7 @@ class TitleAndPrice extends StatelessWidget {
         ),
         child: Column(children: <Widget>[
           Padding(
-            padding: const EdgeInsets.fromLTRB(20,20,0,20),
+            padding: const EdgeInsets.fromLTRB(20, 20, 0, 20),
             child: Column(
               children: [
                 Padding(
@@ -37,7 +43,7 @@ class TitleAndPrice extends StatelessWidget {
                         text: TextSpan(
                           children: [
                             TextSpan(
-                              text: "$title\n",
+                              text: "${plant.title}\n",
                               style: Theme.of(context)
                                   .textTheme
                                   .headline4
@@ -46,7 +52,7 @@ class TitleAndPrice extends StatelessWidget {
                                       fontWeight: FontWeight.bold),
                             ),
                             TextSpan(
-                              text: country,
+                              text: "${plant.group}",
                               style: TextStyle(
                                 fontSize: 20,
                                 color: Colors.white,
@@ -67,7 +73,7 @@ class TitleAndPrice extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
-                            "\$$price",
+                            "\$${plant.price}",
                             style: Theme.of(context)
                                 .textTheme
                                 .headline5
@@ -87,7 +93,7 @@ class TitleAndPrice extends StatelessWidget {
                       child: Container(
                         width: size.width * 0.7,
                         child: Padding(
-                          padding: const EdgeInsets.only(right:20.0),
+                          padding: const EdgeInsets.only(right: 20.0),
                           child: Text(
                             longtext,
                             textWidthBasis: TextWidthBasis.longestLine,
@@ -127,7 +133,7 @@ class TitleAndPrice extends StatelessWidget {
                                     IconCardBlack(icon: "assets/icons/sun.svg"),
                                     Padding(
                                       padding: const EdgeInsets.only(left: 8.0),
-                                      child: Text("Add TO Cart",
+                                      child: Text(plant.care[0],
                                           style: TextStyle(
                                             fontSize: 15.0,
                                             color: Colors.deepPurple,
@@ -145,7 +151,7 @@ class TitleAndPrice extends StatelessWidget {
                                         icon: "assets/icons/icon_2.svg"),
                                     Padding(
                                       padding: const EdgeInsets.only(left: 8.0),
-                                      child: Text("Add TO Cart",
+                                      child: Text(plant.care[1],
                                           style: TextStyle(
                                             fontSize: 15.0,
                                             color: Colors.deepPurple,
@@ -163,7 +169,7 @@ class TitleAndPrice extends StatelessWidget {
                                         icon: "assets/icons/icon_3.svg"),
                                     Padding(
                                       padding: const EdgeInsets.only(left: 8.0),
-                                      child: Text("Add TO Cart",
+                                      child: Text(plant.care[2],
                                           style: TextStyle(
                                             fontSize: 15.0,
                                             color: Colors.deepPurple,
@@ -181,7 +187,7 @@ class TitleAndPrice extends StatelessWidget {
                                         icon: "assets/icons/icon_4.svg"),
                                     Padding(
                                       padding: const EdgeInsets.only(left: 8.0),
-                                      child: Text("Add TO Cart",
+                                      child: Text(plant.care[3],
                                           style: TextStyle(
                                             fontSize: 15.0,
                                             color: Colors.deepPurple,
@@ -208,7 +214,8 @@ class TitleAndPrice extends StatelessWidget {
                         width: size.width * 0.4,
                         height: 175,
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.only(topLeft:Radius.circular(20)),
+                            borderRadius:
+                                BorderRadius.only(topLeft: Radius.circular(20)),
                             color: kBackgroundColor),
                         child: Padding(
                           padding: const EdgeInsets.all(18.0),
@@ -219,58 +226,64 @@ class TitleAndPrice extends StatelessWidget {
                                 child: Text("Care Level",
                                     style: TextStyle(
                                       fontSize: 18.0,
-                                      color: Colors.deepPurple,
-                                      decorationColor: Colors.deepPurpleAccent,
+                                      color: kPrimaryColor,
                                       fontStyle: FontStyle.normal,
                                       fontWeight: FontWeight.normal,
                                     )),
                               ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Icon(
-                          Icons.arrow_forward,
-                          size: 50,
-                          color: Colors.black,
-                        ),
-                                  ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: SvgPicture.asset(
+                                  "assets/icons/mood_level_green.svg",
+                                ),
+                                // Icon(
+                                //   Icons.arrow_forward,
+                                //   size: 50,
+                                //   color: Colors.black,
+                                // ),
+                              ),
+                              Text(plant.care[3],
+                                  style: TextStyle(
+                                      color: Colors.green,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20.0)),
                             ],
-                            
                           ),
                         ),
                       ),
                     ],
                   ),
                 )),
-                Padding(
-                  padding: const EdgeInsets.only(right:20.0),
-                  child: Row(
-                    children: [
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: Padding(
-                          padding: EdgeInsets.only(
-                              left: 20, top: 5, bottom: 5, right: 20),
-                          child: Text("Add TO Cart",
-                              style: TextStyle(
-                                fontSize: 18.0,
-                                color: Colors.white,
-                                decorationColor: Colors.lightGreen,
-                                fontStyle: FontStyle.normal,
-                                fontWeight: FontWeight.bold,
-                              )),
-                        ),
-                      ),
-                      Spacer(),
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: Icon(
-                          Icons.arrow_forward,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                // Padding(
+                //   padding: const EdgeInsets.only(right: 20.0),
+                //   child: Row(
+                //     children: [
+                //       ElevatedButton(
+                //         onPressed: () {},
+                //         child: Padding(
+                //           padding: EdgeInsets.only(
+                //               left: 20, top: 5, bottom: 5, right: 20),
+                //           child: Text("Add TO Cart",
+                //               style: TextStyle(
+                //                 fontSize: 18.0,
+                //                 color: Colors.white,
+                //                 decorationColor: Colors.lightGreen,
+                //                 fontStyle: FontStyle.normal,
+                //                 fontWeight: FontWeight.bold,
+                //               )),
+                //         ),
+                //       ),
+                //       Spacer(),
+                //       ElevatedButton(
+                //         onPressed: () {},
+                //         child: Icon(
+                //           Icons.arrow_forward,
+                //           color: Colors.white,
+                //         ),
+                //       ),
+                //     ],
+                //   ),
+                // ),
               ],
             ),
           ),

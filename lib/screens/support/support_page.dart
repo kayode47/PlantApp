@@ -51,78 +51,77 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return  SingleChildScrollView(
           child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Column(
               children: [
                 Container(
-                  height: MediaQuery.of(context).size.height * 0.3,
-                  child: GridView(
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      mainAxisSpacing: kDefaultPadding/2,
-                      crossAxisSpacing: kDefaultPadding/2,
-                      childAspectRatio: 1.0,
-                    ),
+                  height: MediaQuery.of(context).size.height * 0.2,
+                  child: Row(                   
                     children: [
-                      Card(
-                        elevation: 3.0,
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Center(
-                            child: Column(
-                              children: [
-                                CircleAvatar(
-                                  child: SvgPicture.asset(
-                                      'assets/icons/customer-service-1.svg'),
-                                ),
-                                Text(
-                                  "Customer Care",
-                                  style:
-                                      Theme.of(context).textTheme.subtitle1.copyWith(
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                ),
-                                Text(
-                                  "Connect with a customer Representative",
-                                  style:
-                                      Theme.of(context).textTheme.subtitle2.copyWith(
-                                            fontWeight: FontWeight.w300,
-                                          ),
-                                ),
-                              ],
+                      Expanded(
+                                              child: Card(
+                          elevation: 3.0,
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Center(
+                              child: Column(
+                                
+                                children: [
+                                  CircleAvatar(
+                                    child: SvgPicture.asset(
+                                        'assets/icons/customer-service-1.svg'),
+                                  ),
+                                  Text(
+                                    "Customer Care",
+                                    style:
+                                        Theme.of(context).textTheme.subtitle1.copyWith(
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                  ),
+                                  Text(
+                                    "Connect with a customer Representative",
+                                    style:
+                                        Theme.of(context).textTheme.subtitle2.copyWith(
+                                              fontWeight: FontWeight.w300,
+                                            ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
                       ),                  
-                      Card(
-                        elevation: 3.0,
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Center(
-                            child: Column(
-                              children: [
-                                CircleAvatar(
-                                  child: SvgPicture.asset(
-                                      'assets/icons/customer-service-1.svg'),
-                                ),
-                                Text(
-                                  "Customer Care",
-                                  style:
-                                      Theme.of(context).textTheme.subtitle1.copyWith(
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                ),
-                                Text(
-                                  "Connect with a customer Representative",
-                                  style:
-                                      Theme.of(context).textTheme.subtitle2.copyWith(
-                                            fontWeight: FontWeight.w300,
-                                          ),
-                                ),
-                              ],
+                      Expanded(
+                                              child: Card(
+                          elevation: 3.0,
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Center(
+                              child: Column(
+                                children: [
+                                  CircleAvatar(
+                                    child: SvgPicture.asset(
+                                        'assets/icons/customer-service-1.svg'),
+                                  ),
+                                  Text(
+                                    "Customer Care",
+                                    style:
+                                        Theme.of(context).textTheme.subtitle1.copyWith(
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                  ),
+                                  Text(
+                                    "Connect with a customer Representative",
+                                    style:
+                                        Theme.of(context).textTheme.subtitle2.copyWith(
+                                              fontWeight: FontWeight.w300,
+                                            ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),

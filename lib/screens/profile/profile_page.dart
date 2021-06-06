@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:plantapp/components/my_bottom_nav_bar.dart';
 import 'package:plantapp/screens/notification/notifcation_page.dart';
 import 'package:plantapp/screens/orders/order_page.dart';
 import 'package:plantapp/screens/coupon/coupon_page.dart';
@@ -10,6 +11,7 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ProfilePage(),
+      bottomNavigationBar: MyBottomNavBar(),
     );
   }
 }
