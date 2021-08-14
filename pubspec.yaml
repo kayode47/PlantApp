@@ -32,6 +32,8 @@ dependencies:
   fancy_on_boarding: ^1.7.0
   firebase_ui: ^1.0.7
   carousel_pro: ^1.0.0
+  badges: ^2.0.1
+
 
 
 

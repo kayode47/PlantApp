@@ -33,81 +33,91 @@ class Body extends StatelessWidget {
           ),
           SizedBox(height: kDefaultPadding),
 
-          Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: Row(
-              children: [
-                ElevatedButton(
-                  style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all(kPrimaryColor)),
-                  onPressed: () {
-                    carts.add(plant);
+          // Padding(
+          //   padding: const EdgeInsets.all(5.0),
+          //   child: Row(
+          //     children: [
+          //       ElevatedButton(
+          //         style: ButtonStyle(
+          //             backgroundColor:
+          //                 MaterialStateProperty.all(kPrimaryColor)),
+          //         onPressed: () {
+          //           carts.add(plant);
+          //           Navigator.push(
+          //             context,
+          //             MaterialPageRoute(
+          //               builder: (context) => CartScreen(),
+          //             ),
+          //           );
+          //         },
+          //         child: Padding(
+          //           padding:
+          //               EdgeInsets.only(left: 20, top: 5, bottom: 5, right: 20),
+          //           child: Text("Add TO Cart",
+          //               style: TextStyle(
+          //                 fontSize: 18.0,
+          //                 color: Colors.white,
+          //                 decorationColor: Colors.lightGreen,
+          //                 fontStyle: FontStyle.normal,
+          //                 fontWeight: FontWeight.bold,
+          //               )),
+          //         ),
+          //       ),
+          //       Spacer(),
+          //       ElevatedButton(
+          //         style: ButtonStyle(
+          //             backgroundColor:
+          //                 MaterialStateProperty.all(kPrimaryColor)),
+          //         onPressed: () {},
+          //         child: Icon(
+          //           Icons.arrow_forward,
+          //           color: Colors.white,
+          //         ),
+          //       ),
+          //     ],
+          //   ),
+          // ),
+
+            Row(
+              children: <Widget>[
+                SizedBox(
+                  width: size.width / 2,
+                  height: 54,
+                  child: FlatButton(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(20),
+                      ),
+                    ),
+                    color: kPrimaryColor,
+                    onPressed: () {
+                       carts.add(plant);
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => CartScreen(),
                       ),
                     );
-                  },
-                  child: Padding(
-                    padding:
-                        EdgeInsets.only(left: 20, top: 5, bottom: 5, right: 20),
-                    child: Text("Add TO Cart",
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          color: Colors.white,
-                          decorationColor: Colors.lightGreen,
-                          fontStyle: FontStyle.normal,
-                          fontWeight: FontWeight.bold,
-                        )),
+                    },
+                    child: Text(
+                      "Buy Now",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                      ),
+                    ),
                   ),
                 ),
-                Spacer(),
-                ElevatedButton(
-                  style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all(kPrimaryColor)),
-                  onPressed: () {},
-                  child: Icon(
-                    Icons.arrow_forward,
-                    color: Colors.white,
+                Expanded(
+                  child: FlatButton(
+                    onPressed: () {
+                       carts.add(plant);
+                    },
+                    child: Text("Add to Cart"),
                   ),
                 ),
               ],
             ),
-          ),
-
-          //   Row(
-          //     children: <Widget>[
-          //       SizedBox(
-          //         width: size.width / 2,
-          //         height: 54,
-          //         child: FlatButton(
-          //           shape: RoundedRectangleBorder(
-          //             borderRadius: BorderRadius.only(
-          //               topRight: Radius.circular(20),
-          //             ),
-          //           ),
-          //           color: kPrimaryColor,
-          //           onPressed: () {},
-          //           child: Text(
-          //             "Buy Now",
-          //             style: TextStyle(
-          //               color: Colors.white,
-          //               fontSize: 16,
-          //             ),
-          //           ),
-          //         ),
-          //       ),
-          //       Expanded(
-          //         child: FlatButton(
-          //           onPressed: () {},
-          //           child: Text("Description"),
-          //         ),
-          //       ),
-          //     ],
-          //   ),
         ],
       ),
     );
